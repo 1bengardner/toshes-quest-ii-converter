@@ -1,12 +1,25 @@
 # Save Converter for Toshe's Quest II
 
+❓ Just looking for the standalone converter download? Get it from https://github.com/1bengardner/toshes-quest-ii-converter/releases.
+
+## Description
+
 Use this converter to upgrade your old saved games (.tq) to work with the latest version of Toshe's Quest II.
 
 Adapted from [toshes-quest-ii/source/converter.py](https://github.com/1bengardner/toshes-quest-ii/blob/master/source/converter.py) to be used as a source for a standalone executable.
 
-## Build
+## Requirements
 
-Use [py2exe](https://www.py2exe.org/) to turn the converter script into an executable, with the help of a py2exe setup script.
+1. To build an executable from `[Converter.py](Converter.py)`, you will need [py2exe](https://www.py2exe.org/). You may need to familiarize yourself with it. A good place to start is the [tutorial](https://www.py2exe.org/index.cgi/Tutorial).
+1. For the converter to run properly after being built, you will need to download the [Toshe's Quest II game source](https://github.com/1bengardner/toshes-quest-ii/tree/master/source).
+
+## Building
+
+This standalone version of the converter requires that all dependent modules exist in the same directory as `Converter.py`. This is so that when the resulting `Converter.exe` is run, it is able to unpickle the data in your character into their original types.
+
+On Windows, you can use the included `mklinks.bat` to speed up linking the required modules from your game source directory.
+
+Use py2exe to turn the converter script into an executable, with the help of a py2exe setup script.
 
 <details>
 
@@ -88,6 +101,6 @@ if __name__ == '__main__':
 
 </details>
 
-## Run
+## Running
 
 Place the resulting `Converter.exe` in the same directory as your [Toshe's Quest II.exe](https://github.com/1bengardner/toshes-quest-ii/releases). Run it and follow the instructions to convert an old file and restore compatibility with the latest version of the game.

@@ -42,7 +42,7 @@ except ImportError, message:
 class BuildExe:
     def __init__(self):
         #Name of starting .py
-        self.script = "directory-to/Converter.py"
+        self.script = "<path-to>/Converter.py"
 
         #Name of program
         self.project_name = "Save converter for Toshe's Quest II"
@@ -55,7 +55,7 @@ class BuildExe:
         self.copyright = "(c) 2023 Ben Gardner"
 
         #Icon file
-        self.icon_file = "your-icon.ico"
+        self.icon_file = "<path-to>/<your-icon.ico>"
         
         #DLL Excludes
         self.exclude_dll = ['w9xpopen.exe']

@@ -10,7 +10,7 @@ Adapted from [toshes-quest-ii/source/converter.py](https://github.com/1bengardne
 
 ## Requirements
 
-1. To build an executable from `[Converter.py](Converter.py)`, you will need [py2exe](https://www.py2exe.org/). You may need to familiarize yourself with it. A good place to start is the [tutorial](https://www.py2exe.org/index.cgi/Tutorial).
+1. To build an executable from [Converter.py](Converter.py), you will need [py2exe](https://www.py2exe.org/). You may need to familiarize yourself with it. A good place to start is the [tutorial](https://www.py2exe.org/index.cgi/Tutorial).
 1. For the converter to run properly after being built, you will need to download the [Toshe's Quest II game source](https://github.com/1bengardner/toshes-quest-ii/tree/master/source).
 
 ## Building

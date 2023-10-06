@@ -1,6 +1,12 @@
 # Toshe Save File Converter
 # Updates 0.0-2.1 characters to 3.0
 
+"""
+Requires that you have the imported modules in the same directory.
+
+I recommend creating symbolic links to the modules in the game directory to keep them up to date.
+"""
+
 import pickle
 import sys
 

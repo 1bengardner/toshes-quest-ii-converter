@@ -11,23 +11,19 @@ Adapted from [toshes-quest-ii/source/converter.py](https://github.com/1bengardne
 ## Requirements
 
 1. To build an executable from [Converter.py](Converter.py), you will need [py2exe](https://www.py2exe.org/). You may need to familiarize yourself with it. A good place to start is the [tutorial](https://www.py2exe.org/index.cgi/Tutorial).
-1. For the converter to run properly after being built, you will need to download the [Toshe's Quest II game source](https://github.com/1bengardner/toshes-quest-ii/tree/master/source).
+1. For the converter to run properly after being built, you will need to download the [Toshe's Quest II game source](https://github.com/1bengardner/toshes-quest-ii/tree/master/source). This is so that when the resulting `Converter.exe` is run, it is able to unpickle the data in your character into their original types.
 
 ## Building
 
-This standalone version of the converter requires that all dependent modules exist in the same directory as `Converter.py`. This is so that when the resulting `Converter.exe` is run, it is able to unpickle the data in your character into their original types.
+Use py2exe to turn the converter script into an executable, with the help of a setup script.
 
-On Windows, you can use the included [mklinks.bat](mklinks.bat) to speed up linking the required modules from your game source directory.
-
-If you don't want to copy all the modules over or move `Converter.py` to the game source directory, you can include in your setup script `sys.path.insert(0, "<path-to-game-directory>")`.
-
-Use py2exe to turn the converter script into an executable, with the help of a py2exe setup script.
+Be sure to include in your setup script `sys.path.insert(0, "<path-to-game-source-directory>")`.
 
 <details>
 
 <summary>Sample py2exe setup script...</summary>
 
-The following script will build an executable from this source.
+The following script will build an executable from `Converter.py`.
 
 Adapted from https://www.pygame.org/wiki/Pygame2exe.
 
@@ -38,8 +34,7 @@ try:
     import glob, fnmatch
     import sys, os, shutil
     import operator
-    # You don't need to mklinks if you include the following line
-    # sys.path.insert(0, "<path-to-game>")
+    sys.path.insert(0, "<path-to-game-source-directory>")
 except ImportError, message:
     raise SystemExit,  "Unable to load module. %s" % message
 

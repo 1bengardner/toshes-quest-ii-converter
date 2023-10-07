@@ -1,6 +1,6 @@
 # Save Converter for Toshe's Quest II
 
-❓ Just looking for the standalone converter download? Get it from https://github.com/1bengardner/toshes-quest-ii-converter/releases.
+ℹ Just looking for the standalone converter download? Get it from https://github.com/1bengardner/toshes-quest-ii-converter/releases.
 
 ## Description
 
@@ -17,7 +17,9 @@ Adapted from [toshes-quest-ii/source/converter.py](https://github.com/1bengardne
 
 This standalone version of the converter requires that all dependent modules exist in the same directory as `Converter.py`. This is so that when the resulting `Converter.exe` is run, it is able to unpickle the data in your character into their original types.
 
-On Windows, you can use the included `mklinks.bat` to speed up linking the required modules from your game source directory.
+On Windows, you can use the included [mklinks.bat](mklinks.bat) to speed up linking the required modules from your game source directory.
+
+If you don't want to copy all the modules over or move `Converter.py` to the game source directory, you can include in your setup script `sys.path.insert(0, "<path-to-game-directory>")`.
 
 Use py2exe to turn the converter script into an executable, with the help of a py2exe setup script.
 
@@ -36,6 +38,8 @@ try:
     import glob, fnmatch
     import sys, os, shutil
     import operator
+    # You don't need to mklinks if you include the following line
+    # sys.path.insert(0, "<path-to-game>")
 except ImportError, message:
     raise SystemExit,  "Unable to load module. %s" % message
 

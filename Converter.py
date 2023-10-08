@@ -10,6 +10,7 @@ I recommend creating symbolic links to the modules in the game directory to keep
 import pickle
 import sys
 
+# The following modules are only required for unpickling Characters
 from TUACharacter import Character
 from TUAWeapon import Weapon
 from TUAArmour import Armour
